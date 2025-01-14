@@ -1,0 +1,32 @@
+  @for (modalItem of items(); track modalItem.id) {
+<ion-modal
+  #modal
+  trigger="{{ modalItem.modalName }}"
+  [initialBreakpoint]="0.8"
+  [breakpoints]="[0, 0.25, 0.5, 0.75, 0.8]"
+  handleBehavior="cycle"
+>
+  <ng-template>
+    <ion-content class="ion-padding">
+      <ion-grid>
+        @if(modalItem.chip){
+        <ion-row class="ion-justify-content-end">
+          <ion-chip color="primary">{{ modalItem.chip }}</ion-chip>
+        </ion-row>
+        }
+        <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-text-center">
+            <div class="circle"></div>
+            <h1>{{ modalItem.title }}</h1>
+            <p>{{ modalItem.content }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-button expand="full" (click)="modal.dismiss()">Close</ion-button>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+} @empty {
+<td>Aucune ligne</td>
+}

@@ -1,0 +1,57 @@
+ion-card-header {
+  --background: black;
+  margin: 2%;
+  border-radius: 8px;
+  color: white;
+  padding: 2%;
+
+  ion-col.title {
+    margin-top: 10px;
+  }
+
+  ion-card-title {
+    color: white;
+  }
+
+  ion-card-subtitle {
+    text-transform: none;
+  }
+  ion-label {
+    ion-text.offers {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      text-align: left;
+    }
+    p {
+      font-size: 3.5vh;
+      letter-spacing: -0.38px;
+      background: #4b61fc;
+      text-align: center;
+      font-weight: 900;
+      color: black;
+      border-radius: 5px;
+      padding-left: 0.2em;
+      padding-right: 0.3em;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+  }
+}
+
+ion-card-content {
+  padding: 0;
+  h3 {
+    font-weight: 900;
+  }
+  p,
+  h3 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+  }
+}
+
+.d {
+  width: 20%;
+  height: auto;
+}

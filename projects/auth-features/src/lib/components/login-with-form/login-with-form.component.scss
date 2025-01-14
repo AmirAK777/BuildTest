@@ -1,0 +1,16 @@
+ion-list {
+  ion-item {
+    ion-input {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      --color: #54565c;
+    }
+  }
+  margin-bottom: 12vh;
+
+  a {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}

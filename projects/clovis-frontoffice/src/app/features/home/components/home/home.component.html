@@ -1,0 +1,470 @@
+<ion-header collapse="fade">
+  <clovis-header title="Accueil" route="settings"></clovis-header>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed"  (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content
+    pullingIcon="crescent"
+    refreshingSpinner="crescent"
+    ></ion-refresher-content>
+  </ion-refresher>
+  <ion-row class="ion-justify-content-center">
+    <ion-segment class="menu" value="capacities">
+      <ion-segment-button value="capacities" content-id="capacities">
+        Mes capacités
+      </ion-segment-button>
+      <ion-segment-button value="taxes" content-id="taxes">
+        Ma fiscalité
+      </ion-segment-button>
+      <ion-segment-button value="assets" content-id="assets">
+        Mon patrimoine
+      </ion-segment-button>
+    </ion-segment>
+  </ion-row>
+  <ion-segment-view>
+    <ion-segment-content id="capacities">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-card-title>0 €</ion-card-title>
+            <ion-text>
+              <p class="clovis-gray">optimisables</p>
+            </ion-text>
+          </ion-row>
+          <ion-card-subtitle class="clovis-gray"
+            >Situation financière actuelle</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-blue">Reste à vivre</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.withHoldingTax) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.withHoldingTax
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                    <ion-button (click)="openModal('disposableIncome','Reste à vivre')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-blue">Épargne dispo</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.saving) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.saving
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                    <ion-button (click)="openModal('availableSavings','Épargne dispo')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+
+            <ion-item>
+              <ion-thumbnail class="envelope">
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-blue">Capacité d’emprunt</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.borrowingCapacity) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.borrowingCapacity
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                    <ion-button (click)="openModal('borrowingCapacity','Capacité d’emprunt')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+        <ion-button routerLink="/objectifs" expand="block"
+          >Optimiser ma situation actuelle</ion-button
+        >
+      </ion-card>
+      <ion-grid>
+        <ion-row
+          class="ion-margin-start ion-align-items-center custom-img-title"
+        >
+          <ion-thumbnail>
+            <img
+              alt="Enveloppe"
+              src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+            />
+          </ion-thumbnail>
+          <h5>Optimisez vos finances dès maintenant</h5>
+        </ion-row>
+      </ion-grid>
+
+      <clovis-card-button
+        title="Sélectionnez vos objectifs!"
+        colorChip="primary"
+        textChip="Objectifs"
+        content="Atteignez vos objectifs grâce à une sélection d’opportunités personnalisées"
+        route="/objectifs"
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Pilotez votre patrimoine"
+        colorChip="primary"
+        textChip="Patrimoine"
+        content="Ajoutez vos comptes pour suivre et gérer votre patrimoine avec Clovis"
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Parrainez vos amis !"
+        colorChip="primary"
+        textChip="Programme de fidélité"
+        content="Gagnez 100€ lors de leur 1ère
+    opération avec Clovis"
+        route="/recommandation/referral"
+      >
+      </clovis-card-button>
+    </ion-segment-content>
+
+    <ion-segment-content id="taxes">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-card-title class="clovis-red">0 €</ion-card-title>
+            <ion-text>
+              <p class="clovis-red">d’économies d’impôts</p>
+            </ion-text>
+          </ion-row>
+          <ion-card-subtitle>Situation fiscale actuelle</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-red">Impôts annuels</ion-text>
+                    <p>À réduire</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.saving) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.saving
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                    <ion-button (click)="openModal('taxSituation','Impôts annuels')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-red">Impôt à la source</ion-text>
+                    <p>À réduire</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.saving) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.saving
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                      <ion-button (click)="openModal('taxSituation','Impôt à la source')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text class="clovis-red">Taux d’imposition</ion-text>
+                    <p>À réduire</p>
+                  </ion-label>
+                  <ion-label>
+                    @if (customer$$()?.financialSituation?.saving) {
+                    <h2>
+                      {{
+                        customer$$()?.financialSituation?.saving
+                          | currency : "EUR" : "symbol" : "1.0-0"
+                      }}
+                    </h2>
+                    } @else {
+                      <ion-button (click)="openModal('taxSituation','Taux d’imposition')"
+                      >Renseigner</ion-button
+                    >
+                    }
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+          <ion-button routerLink="/recommandation/reduce-tax" expand="block"
+            >Réduire mes impôts</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+
+      <ion-grid>
+        <ion-row
+          class="ion-margin-start ion-align-items-center custom-img-title"
+        >
+          <ion-thumbnail>
+            <img
+              alt="Enveloppe"
+              src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+            />
+          </ion-thumbnail>
+          <h5>Opportunités Clovis</h5>
+        </ion-row>
+      </ion-grid>
+
+      <clovis-card-button
+        title="Jusqu’à 200€ offerts"
+        colorChip="success"
+        textChip="Offre limitée"
+        content="Pour toute 1ère ouverture de PER avec des versements programmés"
+        route="/objectifs"
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Aide à la déclaration Clovis"
+        colorChip="success"
+        textChip="IA fiscale Clovis"
+        content="Déclarez vos revenus et optimisez votre fiscalité avec l’IA fiscale Clovis*"
+        route="/recommandation/optimize-declarations"
+
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Parrainez vos amis !"
+        colorChip="success"
+        textChip="Les bons avantages font les bons amis !"
+        content="Gagnez 100€ lors de leur 1ère opération avec Clovis"
+        route="/recommandation/referral"
+      >
+      </clovis-card-button>
+    </ion-segment-content>
+
+    <ion-segment-content id="assets">
+      <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-card-title>0 €</ion-card-title>
+            <ion-text>
+              <p>optimisables</p>
+            </ion-text>
+          </ion-row>
+          <ion-card-subtitle>Situation financière actuelle</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text>Épargne dispo</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    <h2>500€</h2>
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text>Épargne dispo</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    <h2>500€</h2>
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+
+            <ion-item>
+              <ion-thumbnail>
+                <img
+                  alt="Enveloppe"
+                  src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1722416418/Vrac/envelope-solid_imsbex.svg"
+                />
+              </ion-thumbnail>
+              <ion-grid>
+                <ion-row
+                  class="ion-justify-content-between ion-align-items-start"
+                >
+                  <ion-label>
+                    <ion-text>Épargne dispo</ion-text>
+                    <p>0 optimisation</p>
+                  </ion-label>
+                  <ion-label>
+                    <h2>500€</h2>
+                  </ion-label>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+          <ion-button expand="block">Block</ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-grid>
+        <ion-row
+          class="ion-margin-start ion-align-items-center custom-img-title"
+        >
+          <ion-thumbnail>
+            <img
+              alt="Enveloppe"
+              src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+            />
+          </ion-thumbnail>
+          <h5>Bons plans Clovis</h5>
+        </ion-row>
+      </ion-grid>
+
+      <clovis-card-button
+        title="3% de cashback"
+        colorChip="success"
+        textChip="Avantage de Clovis"
+        content="sur une sélection de produits*"
+        route="/objectifs"
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Jusqu’à 200€ offerts"
+        colorChip="success"
+        textChip="Cadeau de bienvenue"
+        content="Pour toute 1ère ouverture de PER avec des versements programmés"
+        route="/objectifs"
+      >
+      </clovis-card-button>
+
+      <clovis-card-button
+        title="Parrainez vos amis !"
+        colorChip="success"
+        textChip="Les bons avantages font les bons amis !"
+        content="Gagnez 100€ lors de leur 1ère
+      opération avec Clovis"
+      route="/recommandation/referral"
+      >
+      </clovis-card-button>
+    </ion-segment-content>
+  </ion-segment-view>
+</ion-content>

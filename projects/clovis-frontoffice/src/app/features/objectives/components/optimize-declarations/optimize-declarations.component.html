@@ -1,0 +1,63 @@
+@if(checkedSituation()) {
+<clovis-loading-page (endLoading)="checkedEvent($event)" />
+} @else {
+<ion-header collapse="fade">
+  <ion-toolbar class="title">
+    <ion-row
+      class="ion-justify-content-center ion-align-items-center ion-text-center"
+    >
+      <ion-thumbnail>
+        <img
+          alt="Enveloppe"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+        />
+      </ion-thumbnail>
+      <ion-text>clovis</ion-text>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-padding ion-margin-top">
+      <ion-text class="ion-text-center">
+        <h1>Optimisez vos déclarations</h1>
+        <p>Passifs</p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-button routerLink="/expert-booking" color="light" shape="round">
+      Démarrer avec un expert
+    </ion-button>
+  </ion-row>
+  <ion-row class="ion-margin-start">
+    <h4>Recommandé pour vous</h4>
+  </ion-row>
+  <clovis-card-button
+    title="Déclarez vos revenus"
+    colorChip="success"
+    textChip="Déclaration de revenu"
+    content="Avec un expert pour appliquer tous vos avantages fiscaux sans erreurs ni oublis"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+  <clovis-card-button
+    title="Utiliser l’IA fiscale Clovis"
+    colorChip="success"
+    textChip="Assistant fiscal"
+    content="Pour répondre à toutes mes questions et optimiser ma fiscalité"
+    [rating]="true"
+    route="/expert-booking"
+  ></clovis-card-button>
+  <clovis-card-button
+  title="Déclarer mes revenus LMNP"
+  colorChip="success"
+  textChip="Déclaration LMNP"
+  content="Générez des revenus locatifs en réduisant vos impôts"
+  [rating]="true"
+  route="/expert-booking"
+
+></clovis-card-button>
+</ion-content>
+}

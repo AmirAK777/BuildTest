@@ -1,0 +1,42 @@
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: #485ce9;
+    ion-thumbnail {
+      --size: 32px;
+    }
+    ion-text {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      color: white;
+      font-size: 1.2em;
+    }
+  }
+}
+
+ion-content {
+  --background: transparent
+    linear-gradient(179deg, #13294f 0%, #485ce9 27%, #788afc 62%, #f3fcfd 85%)
+    0% 0% no-repeat padding-box;
+
+  h1 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+    color: white;
+  }
+
+  p {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 300;
+    color: white;
+  }
+  h4 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+    color: #13294f;
+  }
+
+  ion-button {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+  }
+}

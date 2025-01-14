@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{name()}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding settings"> 
+  @if(dynamicForm) {
+  <form [formGroup]="dynamicForm" (ngSubmit)="submitForm()">
+    <ion-list>
+      @for(field of formConfig?.fields; track field) {
+      <ion-item>
+        @switch(field.type) { @case('text') {
+        <ion-input
+          fill="solid"
+          [formControlName]="field.label"
+          [label]="field.label"
+          labelPlacement="floating"
+        />
+        } @case('number') {
+        <ion-input
+          fill="solid"
+          [formControlName]="field.label"
+          [label]="field.label"
+          type="number"
+          labelPlacement="floating"
+        />
+        } @case('select') {
+        <ion-select
+          [formControlName]="field.label"
+          [label]="field.label"
+          placeholder="Choisir"
+          interface="popover"
+        >
+          @for(option of field.options; track option) {
+          <ion-select-option [value]="option">
+            {{ option }}
+          </ion-select-option>
+          }
+        </ion-select>
+
+        @if(dynamicForm.get(field.label)?.invalid &&
+        dynamicForm.get(field.label)?.touched &&
+        dynamicForm.get(field.label)?.hasError('required')) {
+        <div>
+          <small> {{ field.label }} is required. </small>
+        </div>
+        } } }
+      </ion-item>
+      }
+
+      <ion-button
+        class="clovis"
+        type="submit"
+        [disabled]="dynamicForm.invalid"
+        expand="block"
+        >Sauvegarder</ion-button
+      >
+    </ion-list>
+  </form>
+  }
+</ion-content>

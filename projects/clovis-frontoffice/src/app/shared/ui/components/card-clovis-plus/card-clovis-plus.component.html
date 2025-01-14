@@ -1,0 +1,35 @@
+<ion-card>
+  <ion-card-header>
+    <ion-row>
+      <ion-col class="title">
+        <ion-card-title>Clovis</ion-card-title>
+        <ion-card-subtitle color="white">{{ subtitle() }}</ion-card-subtitle>
+      </ion-col>
+      <ion-row>
+        <ion-col class="ion-margin-bottom">
+          <ion-label>
+            <ion-text class="offers">{{ currentOffer() }}</ion-text>
+            <p>
+              <ion-text> {{offer()}} </ion-text>
+            </p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-row>
+    <ion-card-subtitle>
+      <!-- <ion-chip color="{{ colorChip() }}">{{ textChip() }}</ion-chip> -->
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    @for (item of items(); track item.id) {
+    <ion-item button id="{{ item.button.id }}">
+      <div size="5" slot="start" class="circle"></div>
+
+      <ion-label>
+        <h3>{{ item.button.title }}</h3>
+        <p>{{ item.button.detail }}</p>
+      </ion-label>
+    </ion-item>
+    }
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,199 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+    <ion-title>
+      <div class="ion-text-wrap">Informations personnelles</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-avatar size="large" aria-hidden="true" slot="start">
+            <ion-label>
+              {{
+                getInitials(
+                  customer$$()?.identity?.firstName ?? "null",
+                  customer$$()?.identity?.lastName ?? "null"
+                )
+              }}
+            </ion-label>
+          </ion-avatar>
+          <ion-label>{{
+            (customer$$()?.identity?.firstName ?? "null") +
+              " " +
+              (customer$$()?.identity?.lastName ?? "null")
+          }}</ion-label>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-label>Offres :</ion-label>
+          @if (customer$$()?.offers != null && customer$$()?.offers?.length) { @for (item of customer$$()?.offers; track
+          $index) {
+          <ion-badge color="primary">{{ item.offerName }}</ion-badge>
+          } } @else {
+          <ion-badge color="secondary">Gratuit</ion-badge>
+          }
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <h4>Mon Clovis</h4>
+
+  <ion-list [inset]="true">
+    <ion-item [routerLink]="['account']" [button]="true">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img
+          alt=""
+          src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        />
+      </ion-avatar>
+      <ion-label>Mon Compte</ion-label>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon
+        color="tertiary"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>M’abonner à Clovis Plus</ion-label>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon
+        color="success"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Notifications</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <h4>Mon profil</h4>
+
+  <ion-list [inset]="true">
+    <ion-item [routerLink]="['identity']" [button]="true">
+      <ion-icon
+        color="danger"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Identité</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['taxation']" [button]="true">
+      <ion-icon
+        color="tertiary"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Fiscalité</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['family-situation']" [button]="true">
+      <ion-icon
+        color="success"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Situation familiale</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['professional-situation']" [button]="true">
+      <ion-icon
+        color="warning"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Situation professionnelle</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['contact-details']" [button]="true">
+      <ion-icon
+        color="warning"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Coordonnées</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item [routerLink]="['income']" [button]="true">
+      <ion-icon
+        color="danger"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Revenus</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['abilities']" [button]="true">
+      <ion-icon
+        color="tertiary"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Capacités</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['wealth']" [button]="true">
+      <ion-icon
+        color="success"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Patrimoine</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['expenses']" [button]="true">
+      <ion-icon
+        color="warning"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Charges</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list [inset]="true">
+    <ion-item [routerLink]="['legal-notices']" [button]="true">
+      <ion-icon
+        color="danger"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Mentions légales</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['cgu']" [button]="true">
+      <ion-icon
+        color="tertiary"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>CGU</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="['confidentiality']" [button]="true">
+      <ion-icon
+        color="success"
+        slot="start"
+        name="list-circle"
+        size="large"
+      ></ion-icon>
+      <ion-label>Confidentialité</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button fill="outline" expand="block" (click)="logout()"
+    >Me déconnecter</ion-button
+  >
+
+  <div class="ion-text-center">
+    <p>v1.0.0 - Force et honneur - Production</p>
+  </div>
+</ion-content>

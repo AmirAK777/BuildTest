@@ -1,0 +1,56 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Capacités</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="abilities" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="remainingincome"
+          label="Reste à vivre"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="currentsavings"
+          label="Épargne actuelle"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="borrowingcapacity"
+          label="Capacité d'emprunt"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="debttoincomeratio"
+          label="Taux d'endettement"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

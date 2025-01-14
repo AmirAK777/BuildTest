@@ -1,0 +1,78 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$clovis-backoffice-primary: mat.define-palette(mat.$indigo-palette);
+$clovis-backoffice-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$clovis-backoffice-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$clovis-backoffice-theme: mat.define-light-theme((
+  color: (
+    primary: $clovis-backoffice-primary,
+    accent: $clovis-backoffice-accent,
+    warn: $clovis-backoffice-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($clovis-backoffice-theme);
+
+/* You can add global styles to this file, and also import other style files */
+@import "custome-theme.scss";
+
+
+
+body {
+    font-family: 'Calibri', sans-serif;
+}
+
+input {
+    height: 3em;
+    margin: 0.5em;
+    border-radius: 4px;
+    border: solid 1px #dadada;
+    background-color: #fff;
+}
+
+.clovis-big-blue-button{
+    min-height: 3.5em;
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    border-color: $color-clovis-button-primary;
+    background-color: $color-clovis-button-primary;
+    color: white;
+  
+    & > span {
+      font-family: $font-sofia;
+      font-size: 1.5em;
+      font-weight: bolder;
+    }
+  
+    &:disabled {
+      color: black;
+      background-color: $color-button-disabled;
+      border: 2px solid $color-button-disabled;
+      cursor: not-allowed;
+    }
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

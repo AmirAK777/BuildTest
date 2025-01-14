@@ -1,0 +1,32 @@
+ion-card {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #89a9ff29;
+  border-radius: 20px;
+
+  ion-item {
+    --border-style: none;
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+
+    ion-card-title {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 700;
+      font-size: 1.5em;
+    }
+
+    ion-card-subtitle {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+    }
+  }
+}
+ion-label {
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+ion-thumbnail {
+  --size: 20px;
+}

@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+  <ion-toolbar class="title">
+    <ion-row
+      class="ion-justify-content-center ion-align-items-center ion-text-center"
+    >
+      <ion-thumbnail>
+        <img
+          alt="Enveloppe"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+        />
+      </ion-thumbnail>
+      <p>
+        Clovis
+        <span style="color: #4b61fc">
+          {{
+            segmentFilter.value === "free"
+              ? ""
+              : segmentFilter.value === "Prenium"
+              ? "Premium"
+              : "Plus"
+          }}
+        </span>
+      </p>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-text-center header-text">
+    <h1>À vous les bons plans pour vos finances</h1>
+    <p>
+      Devenez membre Clovis Plus et profitez de frais offerts et de plein
+      d’autres avantages.
+    </p>
+  </div>
+  <ion-segment mode="md" class="club" scrollable [formControl]="segmentFilter">
+    <ion-segment-button value="free">
+      <ion-row class="ion-align-items-center">
+        @if(segmentFilter.value =='free'){
+        <ion-checkbox checked="true"></ion-checkbox>
+        }@else{
+        <ion-checkbox></ion-checkbox>
+        }
+        <ion-col size="1"> Gratuit </ion-col>
+      </ion-row>
+    </ion-segment-button>
+    <ion-segment-button value="Prenium">
+      <ion-row class="ion-align-items-center">
+        @if(segmentFilter.value =='Prenium'){
+        <ion-checkbox checked="true"></ion-checkbox>
+        }@else{
+        <ion-checkbox></ion-checkbox>
+        }
+        <ion-col size="1"> Premium </ion-col>
+      </ion-row>
+    </ion-segment-button>
+    <ion-segment-button value="Plus">
+      <ion-row class="ion-align-items-center">
+        @if(segmentFilter.value =='Plus'){
+        <ion-checkbox checked="true"></ion-checkbox>
+        }@else{
+        <ion-checkbox></ion-checkbox>
+        }
+        <ion-col size="1"> Plus </ion-col>
+      </ion-row>
+    </ion-segment-button>
+  </ion-segment>
+
+  @if(modals$$(); as modalsList) { @switch(segmentFilter.value) { @case ("free")
+  {
+  <clovis-card-clovis-plus
+    currentOffer="Offre actuelle"
+    offer="gratuit"
+    subtitle="--"
+    [items]="modalsList"
+  />
+  <clovis-modal-clovis-plus [items]="modalsList" />
+  } @case ('Prenium') {
+  <clovis-card-clovis-plus
+    currentOffer="Offre recommandée"
+    offer="Prenium"
+    subtitle="12,49 €/mois"
+    [items]="modalsList"
+  />
+  } @case ('Plus') {
+  <clovis-card-clovis-plus
+    offer="Plus"
+    subtitle="41,58 €/mois"
+    [items]="modalsList"
+  />
+  } } }
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    @if (segmentFilter.value != 'free') {
+    <ion-button
+      expand="block"
+      class="clovis"
+      (click)="choiceSuscription(segmentFilter.value)"
+      >Je démarre</ion-button
+    >
+    }
+  </ion-toolbar>
+</ion-footer>

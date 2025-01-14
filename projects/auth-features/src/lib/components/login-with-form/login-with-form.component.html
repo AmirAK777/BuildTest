@@ -1,0 +1,28 @@
+<form [formGroup]="loginForm" (submit)="save()">
+  <ion-list>
+    <ion-item>
+      <ion-input
+        fill="solid"
+        label="Email"
+        [formControl]="email"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        fill="solid"
+        label="Mot de passe"
+        [formControl]="password"
+        labelPlacement="floating"
+        type="password"
+      ></ion-input>
+    </ion-item>
+    <div class="ion-text-center ion-margin-top">
+      <a routerLink="/authenticate/forgot-password">mot de passe oublié</a>
+    </div>
+  </ion-list>
+
+  <ion-button class="clovis" type="submit" [disabled]="!isValid" expand="block"
+    >Valider</ion-button
+  >
+</form>

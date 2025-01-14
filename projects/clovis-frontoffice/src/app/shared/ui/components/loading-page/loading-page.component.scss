@@ -1,0 +1,21 @@
+h2 {
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 300;
+}
+
+ion-content {
+  --background: transparent linear-gradient(177deg, #f1f8fe 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+}
+ion-list {
+  background: none;
+  ion-progress-bar {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}

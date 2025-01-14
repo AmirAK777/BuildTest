@@ -1,0 +1,94 @@
+<clovis-header title="Patrimoine" route="settings"></clovis-header>
+<ion-content fullscreen="true" class="ion-padding">
+  <ion-segment class="menu" value="total">
+    <ion-segment-button value="total" content-id="total">
+      Total
+    </ion-segment-button>
+    <ion-segment-button value="financier" content-id="financier">
+      Financier
+    </ion-segment-button>
+    <ion-segment-button value="immobilier" content-id="immobilier">
+      Immobilier
+    </ion-segment-button>
+  </ion-segment>
+  <ion-modal backdropDismiss="false" [isOpen]="showWidget$$()">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Ajouter un compte</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Fermer</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        @if (isLoading$$()) {
+          
+        <ion-spinner name="circular" color="dark"></ion-spinner>
+
+        } @if (showWidget$$() && (isWidget$$())) {
+        <ion-row class="ion-justify-content-center full-height">
+          <iframe
+            class="iframe-full-height"
+            [src]="sanitizedWidgetLink"
+            title="Linxo Widget"
+          ></iframe>
+        </ion-row>
+
+        }
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  @if (accounts$$()?.length !== 0) {
+  <ion-segment-view>
+    <ion-segment-content id="total">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text class="balance-amount">
+              {{ calculateTotalBalance(accounts$$()) }} €
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text class="balance-label"> SOLDE TOTAL </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text class="sync-info"> Synchronisé à 09h43 </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-segment-content>
+  </ion-segment-view>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="showWidget()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  @for (item of accounts$$(); track $index) {
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <p>{{ item.name }}</p>
+          <P> {{ item.balance }}</P>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <P>Assurance vie</P>
+          <p>+ {{ item.savings?.yield_rate }} %</p>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  }
+
+} @else {
+  <ion-button expand="block" class="clovis" (click)="showWidget()"
+    >Compléter mon patrimoine</ion-button
+  >
+  }
+</ion-content>

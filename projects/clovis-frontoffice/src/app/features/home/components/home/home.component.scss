@@ -1,0 +1,114 @@
+ion-row.custom-img-title {
+  justify-content: start;
+
+  ion-thumbnail {
+    --size: 35px;
+  }
+}
+
+ion-item {
+  --border-style: none;
+  margin-bottom: 15px;
+}
+
+ion-content {
+  --background: transparent linear-gradient(178deg, #f1f8fe 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+
+  h5 {
+    font-size: 1em;
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 800;
+  }
+}
+
+ion-segment {
+  margin: 2vh;
+}
+
+ion-card {
+  box-shadow: 3px 3px 5px #00000019;
+  border-radius: 19px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  ion-row {
+    align-items: start;
+    ion-label {
+      ion-button {
+        margin: 0;
+      }
+    }
+  }
+
+  ion-card-header {
+    ion-card-title {
+      font-size: 2.5em;
+      margin-right: 1vh;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 700;
+    }
+
+    ion-card-subtitle {
+      font-family: "SofiaPro", sans-serif;
+      text-transform: none;
+      font-size: 1em;
+    }
+
+    ion-text {
+      margin-top: 5px;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+    }
+  }
+
+  ion-card-content {
+    padding: 0px;
+
+    ion-thumbnail {
+      --size: 40px;
+      border-radius: 50%;
+      background-color: #f0f9ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-right: 3%;
+    }
+
+    ion-thumbnail img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+
+    ion-text {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      font-size: 1.1em;
+    }
+
+    h2 {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+
+      font-size: 1.2em;
+    }
+  }
+
+  ion-button {
+    --border-radius: 27px;
+    margin: 2vh 1vh 3vh 1vh;
+    font-family: "SofiaPro", sans-serif;
+  }
+}
+
+.clovis-blue {
+  color: #1054ff;
+}
+
+.clovis-red {
+  color: #ea4948;
+}
+
+.clovis-grey {
+  color: #767f89;
+}

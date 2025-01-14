@@ -1,0 +1,26 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="selectedTab = 'home'">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="analyse" (click)="selectedTab = 'analyse'">
+      <ion-icon name="bar-chart-outline"></ion-icon>
+
+      <ion-label>Analyse</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="objectifs" (click)="selectedTab = 'objectifs'">
+      <ion-icon name="podium-outline"></ion-icon>
+
+
+      <ion-label>Objectifs</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="patrimoine" (click)="selectedTab = 'patrimoine'">
+      <ion-icon name="wallet-outline"></ion-icon>
+      <ion-label>Patrimoine</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

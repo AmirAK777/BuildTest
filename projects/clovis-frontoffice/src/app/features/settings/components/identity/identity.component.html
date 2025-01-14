@@ -1,0 +1,91 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Identité</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  
+  <form [formGroup]="identity" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Civilité"
+          interface="popover"
+          formControlName="title"
+          placeholder="Choisir"
+        >
+          <ion-select-option value="madame">Madame</ion-select-option>
+          <ion-select-option value="monsieur">Monsieur</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input
+          fill="solid"
+          label="Prénom"
+          formControlName="firstName"
+          labelPlacement="floating"
+          errorText="Ce champ est obligatoire"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Nom"
+          formControlName="lastName"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          type="date"
+          fill="solid"
+          formControlName="birthDate"
+          label="Date de naissance"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="birthCountry"
+          label="Pays de naissance"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="birthCity"
+          label="Ville de naissance"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="birthRegion"
+          label="Région de naissance"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+    >
+      Valider
+    </ion-button>
+  </form>
+</ion-content>

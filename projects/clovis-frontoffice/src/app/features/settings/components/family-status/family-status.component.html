@@ -1,0 +1,66 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Situation familiale</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="familyStatus" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Situation familiale"
+          interface="popover"
+          formControlName="maritalSituation"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="0">Célibataire</ion-select-option>
+          <ion-select-option [value]="1">Marié(e)</ion-select-option>
+          <ion-select-option [value]="2">Divorcé(e)</ion-select-option>
+          <ion-select-option [value]="3">Union libre</ion-select-option>
+          <ion-select-option [value]="4">Veuf/Veuve</ion-select-option>
+        </ion-select>
+        <!-- @if (familyStatus.touched) {
+          
+              <div>The age is required</div>
+      
+        } -->
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Nombre d'enfants"
+          formControlName="children"
+          labelPlacement="floating"
+          type="number"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="dependents"
+          label="Personnes à charge (y compris enfant)"
+          labelPlacement="floating"
+          type="number"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="legalProtection"
+          label="Protection juridique"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

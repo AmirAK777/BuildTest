@@ -1,0 +1,13 @@
+import { LoginComponent } from './pages/login/login.component';
+export const authenticationRoutes = [
+    {
+        path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: 'forgot-password',
+        loadComponent: () => import('../lib/pages/forgot-password/forgot-password.component').then((m) => m.ForgotPasswordComponent),
+    },
+    { path: '**', redirectTo: '/login' },
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXV0aGVuaWNhdGlvbi5yb3V0ZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9hdXRoLWZlYXR1cmVzL3NyYy9saWIvYXV0aGVuaWNhdGlvbi5yb3V0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0EsT0FBTyxFQUFFLGNBQWMsRUFBRSxNQUFNLCtCQUErQixDQUFDO0FBRS9ELE1BQU0sQ0FBQyxNQUFNLG9CQUFvQixHQUFXO0lBQzFDO1FBQ0UsSUFBSSxFQUFFLE9BQU87UUFDYixTQUFTLEVBQUUsY0FBYztLQUMxQjtJQUNEO1FBQ0UsSUFBSSxFQUFFLGlCQUFpQjtRQUN2QixhQUFhLEVBQUUsR0FBRyxFQUFFLENBQ2xCLE1BQU0sQ0FBQyx3REFBd0QsQ0FBQyxDQUFDLElBQUksQ0FDbkUsQ0FBQyxDQUFDLEVBQUUsRUFBRSxDQUFDLENBQUMsQ0FBQyx1QkFBdUIsQ0FDakM7S0FDSjtJQUNELEVBQUUsSUFBSSxFQUFFLElBQUksRUFBRSxVQUFVLEVBQUUsUUFBUSxFQUFFO0NBQ3JDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSb3V0ZXMgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xyXG5pbXBvcnQgeyBMb2dpbkNvbXBvbmVudCB9IGZyb20gJy4vcGFnZXMvbG9naW4vbG9naW4uY29tcG9uZW50JztcclxuXHJcbmV4cG9ydCBjb25zdCBhdXRoZW50aWNhdGlvblJvdXRlczogUm91dGVzID0gW1xyXG4gIHtcclxuICAgIHBhdGg6ICdsb2dpbicsXHJcbiAgICBjb21wb25lbnQ6IExvZ2luQ29tcG9uZW50LFxyXG4gIH0sXHJcbiAge1xyXG4gICAgcGF0aDogJ2ZvcmdvdC1wYXNzd29yZCcsXHJcbiAgICBsb2FkQ29tcG9uZW50OiAoKSA9PlxyXG4gICAgICBpbXBvcnQoJy4uL2xpYi9wYWdlcy9mb3Jnb3QtcGFzc3dvcmQvZm9yZ290LXBhc3N3b3JkLmNvbXBvbmVudCcpLnRoZW4oXHJcbiAgICAgICAgKG0pID0+IG0uRm9yZ290UGFzc3dvcmRDb21wb25lbnRcclxuICAgICAgKSxcclxuICB9LFxyXG4gIHsgcGF0aDogJyoqJywgcmVkaXJlY3RUbzogJy9sb2dpbicgfSxcclxuXTtcclxuIl19

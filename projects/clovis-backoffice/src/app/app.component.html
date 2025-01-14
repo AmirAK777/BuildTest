@@ -1,0 +1,14 @@
+<div class="left-sidebar-grid">
+  @if (isLogged()) {
+  <header class="header">Header</header>
+
+  }
+
+  <main class="main-content"><router-outlet /></main>
+
+  @if (isLogged()) {
+
+  <section class="left-sidebar"><clovis-side-menu /></section>
+  <footer class="footer">Footer</footer>
+  }
+</div>

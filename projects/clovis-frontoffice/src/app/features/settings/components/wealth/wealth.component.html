@@ -1,0 +1,47 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Patrimoine</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="wealth" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="financialassets"
+          label="Patrimoine financier"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="realestateassets"
+          label="Patrimoine immobilier"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="otherassets"
+          label="Autres actifs"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

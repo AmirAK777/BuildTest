@@ -1,0 +1,26 @@
+<ion-card button [routerLink]="route() ? [route()] : null">
+  <ion-card-header>
+    <ion-item  detail="true">
+      <ion-card-title>{{ title() }}</ion-card-title>
+    </ion-item>
+    <ion-card-subtitle>
+      <ion-chip color="{{ colorChip() }}">{{ textChip() }}</ion-chip>
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      {{ content() }}
+    </ion-item>
+    @if(rating()){
+    <ion-row>
+      <ion-thumbnail>
+        <img
+          alt="Enveloppe"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1669341075/check-mark-button_2705_2_vr3xxn.png"
+        />
+      </ion-thumbnail>
+      <ion-label> 4.9 | 200 avis</ion-label>
+    </ion-row>
+    }
+  </ion-card-content>
+</ion-card>

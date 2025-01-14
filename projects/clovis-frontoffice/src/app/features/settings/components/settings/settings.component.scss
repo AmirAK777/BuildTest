@@ -1,0 +1,68 @@
+ion-header {
+  ion-title {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+  }
+}
+
+ion-content {
+  --background: #f1f8ff 0% 0% no-repeat padding-box;
+
+  ion-card {
+    box-shadow: 0px 3px 6px #00000029;
+    text-transform: capitalize;
+
+    ion-card-content {
+      padding-top: 5px;
+      padding-bottom: 0;
+
+      ion-item {
+        ion-label {
+          font-family: "SofiaPro", sans-serif;
+          font-weight: 500;
+        }
+      }
+    }
+    ion-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1054ff;
+      min-width: 3em;
+      min-height: 3em;
+      ion-label {
+        color: #f1f8ff;
+        font-family: "SofiaPro", sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+
+  h4 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+    color: #00053b;
+    opacity: 1;
+  }
+
+  ion-list {
+    ion-item {
+      --border-color: black;
+    }
+
+    ion-item::part(detail-icon) {
+      color: #707070;
+      opacity: 1;
+    }
+
+    ion-label {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 400;
+      color: #00053b;
+    }
+  }
+  p {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 300;
+  }
+}

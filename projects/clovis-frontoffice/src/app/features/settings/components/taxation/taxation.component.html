@@ -1,0 +1,88 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Fiscalité</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="taxation" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Nationalité"
+          formControlName="nationality"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Résidence fiscale principale"
+          formControlName="principalTaxResidence"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Autre résidence fiscale dans un autre pays ?"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="taxResidenceInAnotherCountry"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Votre foyer est-il soumis à l'impôt sur le revenu ?"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="isHouseholdSubjectToIncomeTax"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Avez-vous la nationalité américaine ?"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="haveAmericainNationality"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Êtes-vous considéré résident fiscal aux EU ?"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="haveNoEuropeenTaxResidence"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

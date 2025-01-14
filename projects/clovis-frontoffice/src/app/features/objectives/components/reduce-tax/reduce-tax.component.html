@@ -1,0 +1,56 @@
+@if(checkedSituation()) {
+<clovis-loading-page (endLoading)="checkedEvent($event)" />
+} @else {
+<ion-header collapse="fade">
+  <ion-toolbar class="title">
+    <ion-row
+      class="ion-justify-content-center ion-align-items-center ion-text-center"
+    >
+      <ion-thumbnail>
+        <img
+          alt="Enveloppe"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+        />
+      </ion-thumbnail>
+      <ion-text>clovis</ion-text>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-padding ion-margin-top">
+      <ion-text class="ion-text-center">
+        <h1>Réduisez vos impôts</h1>
+        <p>Profitez des meilleurs avantages fiscaux pour alléger vos impôts</p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-button routerDirection="none"  routerLink="/expert-booking" color="light" shape="round">
+      Démarrer avec un expert
+    </ion-button>
+  </ion-row>
+  <ion-row class="ion-margin-start">
+    <h4>Recommandé pour vous</h4>
+  </ion-row>
+  <ion-text class="ion-margin-start"> </ion-text>
+  <clovis-card-button
+    title="PER de rendement"
+    colorChip="success"
+    textChip="Solution prioritaire"
+    content="Jusqu’à 17 000 € d’économie d’impôt/an. Frais les plus bas du marché"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+  <clovis-card-button
+    title="Immobilier locatif neuf"
+    colorChip="warning"
+    textChip="Dernière chance"
+    content="Jusqu’à 63 000 € d’économies d’impôt pendant 10 ans"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+</ion-content>
+}

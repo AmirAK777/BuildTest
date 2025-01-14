@@ -1,0 +1,73 @@
+@if(checkedSituation()) {
+<clovis-loading-page (endLoading)="checkedEvent($event)" />
+} @else {
+<ion-header collapse="fade">
+  <ion-toolbar class="title">
+    <ion-row
+      class="ion-justify-content-center ion-align-items-center ion-text-center"
+    >
+      <ion-thumbnail>
+        <img
+          alt="Enveloppe"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1668516112/Logo_Clovis_fxqyoh.png"
+        />
+      </ion-thumbnail>
+      <ion-text>clovis</ion-text>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-padding ion-margin-top">
+      <ion-text class="ion-text-center">
+        <h1>Préparez votre retraite</h1>
+        <p>Profitez des meilleurs avantages pour sécuriser et augmenter vos revenus</p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-button routerLink="/expert-booking" color="light" shape="round">
+      Démarrer avec un expert
+    </ion-button>
+  </ion-row>
+  <ion-row class="ion-margin-start">
+    <h4>Recommandé pour vous</h4>
+  </ion-row>
+  <clovis-card-button
+    title="PER de rendement"
+    colorChip="success"
+    textChip="Solution prioritaire"
+    content="Transformez vos impôts en patrimoine et économisez jusqu’à 17 000€ d’impôt/an"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+  <clovis-card-button
+    title="SCPI de rendement"
+    colorChip="primary"
+    textChip="Solution complémentaire"
+    content="Générez jusqu’à 1 200€/mois de revenus passifs sans gestion ni contraintes locatifves"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+  <clovis-card-button
+    title="Immobilier locatif neuf"
+    colorChip="primary"
+    textChip="Frais de notaire offerts"
+    content="Générez des revenus locatifs en réduisant vos impôts"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+  <clovis-card-button
+    title="Immobilier LMNP"
+    colorChip="success"
+    textChip="Dernière chance"
+    content="Générez des revenus locatifs en réduisant vos impôts"
+    [rating]="true"
+    route="/expert-booking"
+
+  ></clovis-card-button>
+</ion-content>
+}

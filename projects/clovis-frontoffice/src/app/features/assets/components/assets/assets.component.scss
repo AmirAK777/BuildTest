@@ -1,0 +1,57 @@
+ion-content {
+  --background: transparent linear-gradient(178deg, #f1f8fe 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+
+  h5 {
+    font-size: 1em;
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+  }
+}
+
+ion-segment-content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 500;
+}
+
+.full-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-full-height {
+  width: 99%;
+  height: 99%;
+  border: none;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "SofiaPro", sans-serif;
+
+  color: #000;
+}
+
+.balance-label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #00053b;
+}
+
+.sync-info {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #c8c8c8;
+}
+ion-spinner {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}

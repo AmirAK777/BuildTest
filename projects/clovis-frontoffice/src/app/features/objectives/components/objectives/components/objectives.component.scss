@@ -1,0 +1,29 @@
+h1 {
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 700;
+}
+p {
+  font-family: "SofiaPro", sans-serif;
+  font-weight: 500;
+}
+ion-content {
+  --background: transparent linear-gradient(178deg, #f1f8fe 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+}
+
+ion-item {
+  --border-style: none;
+}
+ion-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-row.custom-img-title {
+  justify-content: center;
+
+  ion-thumbnail {
+    --size: 35px;
+  }
+}

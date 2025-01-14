@@ -1,0 +1,78 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Coordonnées</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="contactForm" (submit)="submitToSave()">
+    <ion-list formGroupName="personalContact">
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Email"
+          formControlName="email"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Téléphone portable"
+          formControlName="phoneNumber"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-input
+          fill="solid"
+          label="Indicatif téléphonique"
+          formControlName="countrycode"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item> -->
+    </ion-list>
+    <ion-list formGroupName="address">
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="N° et libelle de la voie"
+          formControlName="street"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Lieu dit/Commune"
+          formControlName="city"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Code postal"
+          formControlName="zipCode"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Pays"
+          formControlName="country"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

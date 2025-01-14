@@ -1,0 +1,30 @@
+<ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-button [routerLink]="['/', route()]">
+      <ion-avatar size="large" aria-hidden="true" slot="start">
+        <ion-label>
+          {{ getInitials(customer$$()?.identity?.firstName ?? 'null', customer$$()?.identity?.lastName ?? 'null') }}
+        </ion-label>
+      </ion-avatar>
+    </ion-button>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button
+      class="club"
+      shape="round"
+      fill="solid"
+      [routerLink]="['/', 'clovis-club']"
+    >
+      <ion-thumbnail>
+        <img
+          alt="clovis-icon"
+          src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1727188414/favicon.ico.ico"
+        />
+      </ion-thumbnail>
+      <ion-text>
+        <ion-label>Club<sup>+</sup></ion-label>
+      </ion-text>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>{{ title() }}</ion-title>
+</ion-toolbar>

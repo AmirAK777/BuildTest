@@ -1,0 +1,10 @@
+<ion-app>
+  <ion-router-outlet />
+  <ion-alert
+    [isOpen]="!isOnline()"
+    header="Connexion Internet requise"
+    subHeader="Vous êtes hors ligne"
+    message="Veuillez vérifier votre connexion Internet pour continuer."
+    backdropDismiss="false"
+  ></ion-alert>
+</ion-app>

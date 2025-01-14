@@ -1,0 +1,53 @@
+<div class="form-container">
+    <form class="form-register" [formGroup]="registerForm" (ngSubmit)="saveToParent()">
+        <div class="form-item">
+            <input type="text" id="firstName" name="firstName" formControlName="firstName" required>
+            <label for="firstName">Username</label>
+        </div>
+        <div class="form-item">
+            <input name="lastName" id="lastName" formControlName="lastName" required>
+            <label for="lastName">Last Name</label>
+        </div>
+        <div class="form-item">
+            <input name="email" id="email" formControlName="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="form-item">
+            <input name="phoneNumber" id="phoneNumber" formControlName="phoneNumber" required>
+            <label for="phoneNumber">Phone Number</label>
+        </div>
+        <div class="form-item">
+            <input name="zipCode" id="zipCode" formControlName="zipCode" required>
+            <label for="zipCode">Zip Code</label>
+        </div>
+        <div class="form-check">
+            <input class="checkbox" type="checkbox" formControlName="rgpdChecked">
+            <label for="acceptTerms" class="form-check-label">J’accepte que CARE SAS collecte mes données personnelles
+                aux fins
+                de pouvoir me contacter (par email et téléphone) pour m’aider à
+                optimiser ma situation fiscale et financière.</label>
+        </div>
+        <div class="images-trust">
+            <img src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1615905954/Signature%20Email/trust_credential_bldu39.png"
+                alt="TRUST">
+        </div>
+        <div class="images-rgpd">
+            <img src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1720877304/Ic%C3%B4nes%20et%20illustrations/icons%20survey/CNIL.jpg"
+                alt="CNIL">
+            <img src="https://res.cloudinary.com/dyewhr2lj/image/upload/v1720877304/Ic%C3%B4nes%20et%20illustrations/icons%20survey/RGPD.png"
+                alt="RGPD">
+        </div>
+        <div class="terms">
+            <p>Nous respectons la confidentialité et la sécurité de vos données</p>
+            <p>En cliquant sur « Accéder à mon résultat », je reconnais avoir pris connaissance et accepté les
+                conditions générales.
+                Les données personnelles communiquées sont uniquement utilisées pour permettre l’utilisation des
+                services Clovis.
+                Pour plus d’informations, consultez notre charte de confidentialité.</p>
+        </div>
+        <div class="button">
+            <button class="clovis-big-blue-button" type="submit" [disabled]="!registerForm.valid">Submit</button>
+        </div>
+    </form>
+
+</div>

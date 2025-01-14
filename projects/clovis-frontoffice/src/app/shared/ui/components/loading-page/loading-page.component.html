@@ -1,0 +1,50 @@
+<ion-header> </ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-row>
+    <ion-col class="ion-padding ion-margin-top">
+      <ion-text class="ion-text-center">
+        <h2>Un instant pendant que nous effectuons quelques calculs…</h2>
+        <p>
+          Un instant avant d’accéder à votre bilan et vos recommandations
+          personnalisées
+        </p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-item lines="none" color="undefind">
+      <ion-label>Situation</ion-label>
+      <ion-progress-bar [value]="situation()"></ion-progress-bar>
+      <ion-checkbox
+        [checked]="checkedSituation()"
+        justify="start"
+      >
+      <ion-progress-bar [value]="situation()"></ion-progress-bar></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none" color="undefind">
+      <ion-label>Capacités</ion-label>
+      <ion-progress-bar [value]="capacity()"></ion-progress-bar>
+      <ion-checkbox
+        [checked]="checkedCapacity()"
+        justify="start"
+      ></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none" color="undefind">
+      <ion-label>Fiscalité</ion-label>
+      <ion-progress-bar [value]="taxation()"></ion-progress-bar>
+      <ion-checkbox
+        [checked]="checkedTaxation()"
+        justify="start"
+      ></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none" color="undefind">
+      <ion-label>Préconisations</ion-label>
+      <ion-progress-bar [value]="recommendations()"></ion-progress-bar>
+      <ion-checkbox
+        [checked]="checkedRecommendations()"
+        justify="start"
+      ></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>

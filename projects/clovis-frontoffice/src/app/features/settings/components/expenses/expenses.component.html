@@ -1,0 +1,56 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Charges</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="expenses" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="rent"
+          label="Loyer"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="loans"
+          label="Crédits"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="currentexpenses"
+          label="Dépenses courantes"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          type="number"
+          fill="solid"
+          formControlName="otherexpenses"
+          label="Autres dépenses"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

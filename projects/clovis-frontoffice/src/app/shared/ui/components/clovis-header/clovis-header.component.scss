@@ -1,0 +1,45 @@
+ion-toolbar {
+  --background: #f1f8fe;
+  ion-button.club {
+    --color: rgb(0, 0, 0);
+    --background: #ffffff 0% 0% no-repeat padding-box;
+    --box-shadow: -3px -3px 6px #1054ff1c;
+  }
+  ion-title {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+  }
+
+  ion-thumbnail {
+    display: flex;
+    --size: 30px;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+  ion-text {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+    font-size: small;
+    sup {
+      font-weight: 900;
+    }
+  }
+  ion-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c4c6c7;
+    max-width: 1.9em;
+    max-height: 1.9em;
+    ion-label {
+      color: #f1f8ff;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 300;
+      font-size: 0.8em;
+    }
+  }
+}

@@ -1,0 +1,259 @@
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: #f1f8fe;
+
+    ion-thumbnail {
+      --size: 32px;
+    }
+
+    ion-text {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 7 500;
+      color: black;
+      font-size: 1.2em;
+    }
+  }
+}
+
+ion-content {
+  --background: transparent linear-gradient(179deg, #f1f8fe 0%, #ffffff 100%) 0%
+    0% no-repeat padding-box;
+
+  h1 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+    color: white;
+  }
+
+  p {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 300;
+    color: white;
+  }
+
+  h3 {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 700;
+    color: #092164;
+  }
+
+  ion-button {
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+  }
+
+  ion-grid {
+    .title {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 700;
+      color: #4b61fc;
+    }
+
+    .subtitle {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 300;
+      color: #182a4e;
+    }
+
+    .custome-title {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 700;
+      color: #182a4e;
+      font-size: 1.2em;
+    }
+
+    ion-row {
+      .trust {
+        max-width: 40%;
+      }
+    }
+  }
+}
+
+.steps-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  // :nth-child(2) {
+  //     img {
+  //         width: 60%;
+  //     }
+  // }
+}
+
+.card {
+  .card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  margin-top: 5%;
+  width: 32%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+  padding: 15px 15px 15px 15px;
+  border-radius: 1.6em;
+  border: none;
+  background-color: #edf2fe;
+
+  h5 {
+    margin-top: 5%;
+    font-size: 1.1em;
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+    color: #092164;
+  }
+
+  img {
+    width: 20%;
+  }
+
+  p {
+    text-align: start;
+    color: #5c6581;
+    font-family: "SofiaPro", sans-serif;
+    font-weight: 500;
+  }
+
+  .expert {
+    width: 170px;
+  }
+}
+
+.card-expert {
+  border-radius: 21px;
+  box-shadow: 0px 3px 8px #0000001a;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+  overflow: visible;
+  margin: 1.6em 0em 1.6em 0em;
+  width: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  .card-expert-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .certification-icon {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: -30px;
+    }
+  }
+
+  .card-expert-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    width: 100%;
+
+    .profile-picture {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      color: #092164;
+      margin: 0;
+    }
+
+    .title {
+      color: #092164;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .distance {
+      color: #939393;
+      font-family: "SofiaPro", sans-serif;
+      font-weight: 300;
+    }
+
+    .rating {
+      display: flex;
+      align-items: start;
+      width: 40%;
+      margin-bottom: 1em;
+    }
+
+    .background {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      .specialties,
+      .experience {
+        ion-item {
+          font-size: 0.9em;
+          font-family: "SofiaPro", sans-serif;
+          font-weight: 300;
+          color: #092164;
+          ion-checkbox {
+            font-family: "SofiaPro", sans-serif;
+            font-weight: 300;
+            font-size: 0.9em;
+            --min-height: 0;
+
+            &.checkbox-disabled {
+              opacity: 1;
+            }
+          }
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        box-shadow: 0px 3px 6px #00004a19;
+        background: #f0f5ff 0% 0% no-repeat padding-box;
+        border-radius: 12px;
+        text-align: start;
+        padding: 2% 4% 4% 4%;
+        width: 48%;
+
+        h3 {
+          font-family: "SofiaPro", sans-serif;
+          font-weight: 500;
+          color: #092164;
+          margin-bottom: 5px;
+          font-size: 1em;
+          margin: 0;
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding-left: 10px;
+
+          li {
+            font-family: "SofiaPro", sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #092164;
+          }
+        }
+      }
+    }
+  }
+}

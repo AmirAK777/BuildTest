@@ -1,0 +1,19 @@
+<nav class="nav">
+  <ul class="nav__list">
+    @for (menuItem of menu; track menuItem) {
+
+    <li
+      class="nav__link"
+      [routerLink]="[menuItem.url]"
+      routerLinkActive="active"
+    >
+      <img src="{{ menuItem.icon }}" />
+      <span  class="nav__text">{{ menuItem.text }}</span>
+    </li>
+
+    }
+    <div class="nav__footer">
+      <span>Clovis Partenaires</span>
+    </div>
+  </ul>
+</nav>

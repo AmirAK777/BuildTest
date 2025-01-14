@@ -1,0 +1,78 @@
+<ion-header collapse="fade">
+  <ion-toolbar>
+    <ion-title>Situation professionnelle</ion-title>
+    <ion-back-button text="" slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding settings">
+  <form [formGroup]="professionalSituation" (submit)="submitToSave()">
+    <ion-list>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          label="Situation professionnelle"
+          formControlName="professionnalStatus"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="job"
+          label="Profession"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="socioProfessionalCategory"
+          label="Catégorie-socio professionnelle"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          fill="solid"
+          formControlName="industrySector"
+          label="Secteur d'activité"
+          labelPlacement="floating"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Exercice d'une fonction politique"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="isPolitical"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-select
+          justify="start"
+          label="Proche exerce une fonction politique"
+          interface="popover"
+          label-placement="stacked"
+          formControlName="anyRelativeIsPolitical"
+          placeholder="Choisir"
+        >
+          <ion-select-option [value]="true">Oui</ion-select-option>
+          <ion-select-option [value]="false">Non</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      class="clovis"
+      type="submit"
+      [disabled]="!isValid"
+      expand="block"
+      >Valider</ion-button
+    >
+  </form>
+</ion-content>

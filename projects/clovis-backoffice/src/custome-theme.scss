@@ -1,0 +1,140 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+
+$Clovis-palette: (
+  50: #e9ecff,
+  100: #c9d0fe,
+  200: #a5b0fe,
+  300: #8190fd,
+  400: #6679fc,
+  500: #4b61fc,
+  600: #4459fc,
+  700: #3b4ffb,
+  800: #3345fb,
+  900: #2333fa,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #cdd0ff,
+  A700: #b3b8ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$Clovis-Accent-Palette: (
+  50: #fefeff,
+  100: #fcfcff,
+  200: #fbfaff,
+  300: #f9f8fe,
+  400: #f7f7fe,
+  500: #f6f5fe,
+  600: #f5f4fe,
+  700: #f3f2fe,
+  800: #f2f0fe,
+  900: #efeefd,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffffff,
+  A700: #ffffff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #9cbce3,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$font-rubik: Rubik, sans-serif;
+
+$color-clovis-primary: #4b61fc;
+$color-clovis-blue-stepper: #7887f7;
+
+$color-clovis-button-primary: #4d65f3;
+$color-clovis-button-form: #1254ff;
+
+$color-clovis-underline-price: #fcb6c4;
+
+$header-circle-color: #bdc5d5;
+$header-text-color: #ffffff;
+
+$default-font-color: #17294d;
+
+$color-clovis-blue-background: #eff9ff;
+
+$color-subtitle: #455980;
+$color-footer-main-survey: #ababab;
+$color-lightgrey: #777b86;
+
+$clovis-header-survey-questions-color: #092164;
+
+$color-button-disabled: #ababad33;
+
+$color-clovis-tax-reduction: #4357f1;
+$color-clovis-green-offer: #20e593;
+$color-clovis-blue-validation: #61b343;
+
+$color-clovis-orange-offer: rgba(241, 173, 46);
+$color-clovis-red-offer: #fe4c45;
+
+$color-clovis-button-grey: lightgrey;
+
+$color-clovis-green-badge: #309032;
+
+$color-clovis-popin-error: #fe4c45;
+$color-clovis-popin-success: #36dfa1;
+
+$color-clovis-menu-home-user-page: #f8f8f8;
+$color-clovis-main-user-header: white;
+$color-clovis-badge-header: #f7f7f7;
+$color-clovis-background-tabset: #f0f0f0;
+
+$color-clovis-unselected-pill: #eaf0ff;
+
+$color-clovis-nav-active: #f1f1f1;
+$color-clovis-nav-text-active: #1c72e8;
+$color-clovis-nav-text-default: #5f6369;
+$color-clovis-nav-hover: #f5f5f5;
+
+$color-clovis-crm-row: #a4f4d8;
+
+$color-clovis-light-grey-podium: #848fb0;
+
+$color-clovis-dark-blue: #17294d;
+$color-clovis-medium-grey: #5c6581;
+
+$clovis-dark-blue-landing-pages: #092164;
+
+$clovis-green-landing-pages: #05c32e;
+
+$color-clovis-per-epargne-actuelle: #e6853e;
+$color-clovis-active-blue-menu: brightness(0) saturate(100%) invert(46%)
+  sepia(81%) saturate(5374%) hue-rotate(224deg) brightness(98%) contrast(101%);
+$clovis-blue-btn: rgb(16, 69, 244);
+
+$clovis-clear-blue-background: #f0f8ff;
+$color-clovis-grey-tunnel-banner: #f1f8fe;
+
+$clovis-green-ma-retraite-ideale: #1c978c;
